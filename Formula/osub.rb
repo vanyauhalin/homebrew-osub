@@ -20,9 +20,9 @@ class Osub < Formula
   end
 
   test do
-    assert_match "0.3.0", shell_output("#{bin}/osub", "version")
+    assert_match shell_output("#{bin}/osub version").strip, "0.3.0"
     resource("testdata").stage do
-      assert_match "c97e8b1573a25396", shell_output("#{bin}/osub", "hash", "file")
+      assert_match shell_output("#{bin}/osub hash file").strip, "c97e8b1573a25396"
     end
   end
 end

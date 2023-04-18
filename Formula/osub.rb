@@ -10,7 +10,7 @@ class Osub < Formula
   depends_on "xz" => :test
   depends_on macos: :catalina
 
-  resource("testdata") do
+  resource("hash-fixture") do
     url "https://github.com/vanyauhalin/osub/raw/v0.3.0/osub/Hash/Fixtures/file"
     sha256 "8656682279c9b3e0b3f23670cae459bba0461fb662458f44ca035b6c14fcd4c0"
   end
@@ -21,7 +21,7 @@ class Osub < Formula
 
   test do
     assert_match shell_output("#{bin}/osub version").strip, "0.3.0"
-    resource("testdata").stage do
+    resource("hash-fixture").stage do
       assert_match shell_output("#{bin}/osub hash file").strip, "c97e8b1573a25396"
     end
   end

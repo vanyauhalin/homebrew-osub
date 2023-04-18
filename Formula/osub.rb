@@ -20,9 +20,9 @@ class Osub < Formula
   end
 
   test do
-    assert_match shell_output("#{bin}/osub version").strip, "0.3.0"
+    assert_match "0.3.0", shell_output("#{bin}/osub version").strip
     resource("hash-fixture").stage do
-      assert_match shell_output("#{bin}/osub hash file").strip, "c97e8b1573a25396"
+      assert_match "c97e8b1573a25396", shell_output("#{bin}/osub hash file").strip
     end
   end
 end

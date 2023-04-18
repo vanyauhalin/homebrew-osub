@@ -2,9 +2,7 @@ name: test
 
 on:
   - workflow_dispatch
-  - push:
-      paths:
-        - "Formula/osub.rb"
+  - push
 
 jobs:
   draft:

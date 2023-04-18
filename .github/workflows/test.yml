@@ -17,5 +17,5 @@ jobs:
           brew tap vanyauhalin/osub
           brew install osub
       - name: Test osub
-      - run: |
+        run: |
           brew test osub
